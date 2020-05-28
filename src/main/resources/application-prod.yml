@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mymysql:3306/my?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+
+
+  redis:
+    url:
+    database: 0
+    host: myredis
+    port: 6379
+    password: 123456
+    timeout: 1000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 1000
+      shutdown-timeout: 100
+
+# slf4j日志配置
+logging:
+  # 配置级别
+  level:
+    #分包配置级别，即不同的目录下可以使用不同的级别
+    com:
+      guorenjie:
+        helloredis: info
+  # 指定输出日志的文件名，默认输出至当前项目目录下
+  file:
+    name: log/mylog.log
+  pattern:
+    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger - %msg%n'
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger - %msg%n'
