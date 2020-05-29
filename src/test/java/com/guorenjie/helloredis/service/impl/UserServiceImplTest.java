@@ -21,24 +21,24 @@ class UserServiceImplTest {
 	@Autowired
 	private UserServiceImpl UserServiceImpl;
 	
-	@Test
+	//@Test
 	void testGetString() {
 		String result = (String) UserServiceImpl.getString("test:string");
 		log.debug("testGetString===="+result);
 	}
-	@Test
+	//@Test
 	void testGetUser() {
 		User result = (User) UserServiceImpl.getString("test:user");
 		log.debug("testGetString===="+result.toString());
 	}
 
-	@Test
+	//@Test
 	void testSetString() {
 		boolean result = UserServiceImpl.setString("test:string", "熊坚强",30000,TimeUnit.MILLISECONDS);
 		log.debug("testSetString===="+result);
 
 	}
-	@Test
+	//@Test
 	void testSetUser() {
 		User user = new User();
 		user.setId("5");
